@@ -1,11 +1,29 @@
-import { factory } from './stylish'
-export { extend, factory } from './stylish'
-export { sm, md, lg } from './media'
-
-import { extend } from './stylish'
-export default extend
-
+import { extend, factory } from './stylish'
+import { sm, md, lg } from './media'
 import { style, types } from 'typestyle'
+
+export { extend, factory, sm, md, lg }
+
+export type CSS = types.NestedCSSProperties
+
+export const cssSelector = (selector: string) => (...objects: CSS[]) => {
+  let prefinal = Object.assign({}, ...objects) as CSS
+  const $nest = Object.assign({}, ...objects.map(obj => obj.$nest))
+  prefinal.$nest = $nest as any
+  const final = prefinal
+  return {
+    $nest: { [`${selector}`]: final }
+  }
+}
+
+export const child = (...objects: CSS[]) => cssSelector('&>*')(...objects)
+export const firstChild = (...objects: CSS[]) => cssSelector('&>*:first-child')(...objects)
+export const lastChild = (...objects: CSS[]) => cssSelector('&>*:last-child')(...objects)
+
+export const active = (...objects: CSS[]) => cssSelector('&:active')(...objects)
+export const hover = (...objects: CSS[]) => cssSelector('&:hover')(...objects)
+export const focus = (...objects: CSS[]) => cssSelector('&:focus')(...objects)
+export const visited = (...objects: CSS[]) => cssSelector('&:visited')(...objects)
 
 // Colors
 
