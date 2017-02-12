@@ -39,7 +39,6 @@ export const factory = <H>(tag: string) => (
       const passedProps = Object.assign(
         {},
         filterObject(props, isValidAttribute),
-        props,
         { className: finalClassName }
       )
 

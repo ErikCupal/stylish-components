@@ -1,9 +1,8 @@
 {
   "name": "stylish-components",
-  "version": "0.0.10",
+  "version": "0.0.12",
   "description": "Direct component styling with Typestyle.",
   "main": "./lib/index.js",
-  "module": "./lib.es2015/index.js",
   "scripts": {
     "start": "rm -rf lib && rm -rf lib.es2015 && tsc -p -w ./ && webpack -w",
     "build": "rm -rf lib && rm -rf lib.es2015 && tsc -p ./ && webpack"
