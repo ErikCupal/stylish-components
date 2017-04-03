@@ -4,7 +4,7 @@ const nodeExternals = require('webpack-node-externals')
 
 const config = {
   entry: [
-    './lib.es2015/index.js',
+    './lib.es2017/index.js',
   ],
 
   output: {

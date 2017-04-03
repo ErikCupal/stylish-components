@@ -2,4 +2,8 @@ node_modules/
 build/
 .vscode/chrome/
 debug.log
-lib.es2015
+lib.es2017
+doc/
+.vscode/
+src/
+.babelrc

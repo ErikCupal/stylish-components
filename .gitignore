@@ -4,3 +4,5 @@ build/
 debug.log
 lib/
 lib.es2015/
+lib.es2017/
+doc/

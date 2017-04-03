@@ -1,8 +1,13 @@
 import { extend, factory } from './stylish'
 import { sm, md, lg } from './media'
-import { style, types } from 'typestyle'
+import { types, media } from 'typestyle'
 
-export { extend, factory, sm, md, lg }
+export { extend, factory, sm, md, lg, }
+
+export type StyleFunction = (...objects: types.NestedCSSProperties[]) => string
+
+export let style: StyleFunction = undefined as any
+export const init = (fn: StyleFunction) => { style = fn }
 
 export type CSS = types.NestedCSSProperties
 

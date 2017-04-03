@@ -1,6 +1,7 @@
 import React from 'react'
-import { style, types } from 'typestyle'
+import { types } from 'typestyle'
 import isValidAttribute from './isValidAttribute'
+import { style } from './index'
 
 const filterObject = <T extends {}>(obj: T, fn: (pair: [string, {}]) => boolean): T => (
   Object.entries(obj)

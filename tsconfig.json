@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
-    "rootDirs": [
-      "./src/"
-    ],
-    "outDir": "./lib.es2015/",
+    "rootDir": "./src/",
+    "outDir": "./lib.es2017/",
     "declaration": true,
     "declarationDir": "./lib/",
     "target": "es2015",
